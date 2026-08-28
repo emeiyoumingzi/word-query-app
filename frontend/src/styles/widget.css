@@ -1,0 +1,221 @@
+/* 桌面小组件专用样式 */
+.widget-window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-family: var(--sans);
+}
+
+.widget-window.above {
+  flex-direction: column-reverse;
+}
+
+/* 搜索条（Electron 下整条可拖动窗口；浏览器中忽略） */
+.dw-preview-note {
+  -webkit-app-region: no-drag;
+  background: #fdf3e3;
+  color: #9a6a15;
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.dw-bar {
+  -webkit-app-region: drag;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid rgba(79, 110, 247, 0.35);
+  padding: 7px 10px;
+  flex: none;
+}
+
+.dw-bar input,
+.dw-bar button {
+  -webkit-app-region: no-drag;
+}
+
+.dw-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: var(--text);
+  padding: 4px 0;
+}
+
+.dw-icon-btn {
+  flex: none;
+  border: none;
+  background: transparent;
+  color: var(--text-faint);
+  font-size: 15px;
+  width: 22px;
+  height: 22px;
+  line-height: 1;
+  border-radius: 50%;}
+
+.dw-icon-btn:hover {
+  background: var(--surface-soft);
+  color: var(--text);
+}
+
+.dw-go {
+  flex: none;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 4px 12px;
+  font-size: 0.82rem;
+}
+
+.dw-go:hover {
+  background: var(--primary-deep);
+}
+
+/* 文字按钮：清空 */
+.dw-text-btn {
+  flex: none;
+  border: 1px solid rgba(31, 35, 48, 0.14);
+  background: var(--surface);
+  color: var(--text-soft);
+  border-radius: var(--radius-sm);
+  padding: 3px 9px;
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+.dw-text-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary-deep);
+}
+
+/* 结果面板：填充窗口剩余空间，内容超限时滚动（自由调整窗口大小时自适应） */
+.dw-panel {
+  margin-top: 8px;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.widget-window.above .dw-panel {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.dw-sugg {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.dw-sugg:hover,
+.dw-sugg.active {
+  background: var(--primary-soft);
+}
+
+.dw-word {
+  font-weight: 600;
+  color: var(--text);
+  flex: none;
+}
+
+.dw-meta {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+}
+
+.dw-result {
+  padding: 4px 8px;
+}
+
+.dw-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.dw-title {
+  border: none;
+  background: transparent;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 0;
+}
+
+.dw-more {
+  font-size: 0.78rem;
+  color: var(--primary);
+}
+
+.dw-line {
+  display: flex;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.dw-pos {
+  flex: none;
+  color: var(--primary-deep);
+  font-weight: 700;
+  font-size: 0.72rem;
+  background: var(--primary-soft);
+  border-radius: 6px;
+  padding: 1px 7px;
+  height: fit-content;
+  margin-top: 2px;
+}
+
+.dw-meaning {
+  color: var(--text);
+}
+
+.dw-empty {
+  padding: 10px;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.dw-suggs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.dw-suggs a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+}

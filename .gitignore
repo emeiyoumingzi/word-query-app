@@ -1,0 +1,25 @@
+# Python
+backend/.venv/
+backend/.pylibs/
+__pycache__/
+*.pyc
+
+# Node
+frontend/node_modules/
+frontend/.npm-cache/
+frontend/dist/
+
+# 构建产物（由 scripts/build_index.py 生成，可随时重建）
+backend/data/words.json
+backend/data/synonyms.json
+backend/data/similar.json
+
+# Electron 桌面小组件
+electron/node_modules/
+electron/.npm-cache/
+electron/.electron-cache/
+electron/widget-state.json
+
+# 系统
+.DS_Store
+Thumbs.db
